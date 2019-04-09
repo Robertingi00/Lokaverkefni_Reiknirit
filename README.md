@@ -3,7 +3,7 @@
 
 ### Hugmynd. 
 
-Hugmyndin er sú að skoða röðunar algrím, prófa nokkrar leiðir til að leysa þau, taka niður tímann og prófa þau í nokkrum forritunarmálum.
+Hugmyndin er sú að skoða röðunar algrím, prófa nokkrar leiðir til að leysa þau, taka niður tímann og prófa þau í nokkrum forritunarmálum. Taka svo niðurstöðurnar samann og setja þær á síðu.
 
 
 * ### Röðunar Algrím(sem geta koma til greina).
@@ -36,3 +36,8 @@ Tímamæling fer þannig fram að algrímið verði keyrt með lista(array) með
 * ### Uppseting.
 Planið er að setja forritið upp á github pages með html/css/javascript. Planið er að það ætti að geta seð hvernig algrímið virkar á síðunni og séð niðurstöðurnar og kóðan.
 
+
+
+---
+* Nemandi.
+    Róber Ingi.
