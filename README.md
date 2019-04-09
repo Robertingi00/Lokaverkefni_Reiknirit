@@ -30,9 +30,9 @@ Hugmyndin er sú að skoða röðunar algrím, prófa nokkrar leiðir til að le
     
 ---
 * ### Tímamæling.
-Tímamæling fer þannig fram að algrímið verði keyrt með lista(array) með 100 tölum, það varður tekið meðaltalið á öllum tímunum, meðaltalið verður tíminn fyrir það forritunar mál.
+   Tímamæling fer þannig fram að algrímið verði keyrt með lista(array) með 100 tölum, það varður tekið meðaltalið á öllum tímunum, meðaltalið verður tíminn fyrir það forritunar mál.
     
 --- 
 * ### Uppseting.
-Planið er að setja forritið upp á github pages með html/css/javascript. Planið er að það ætti að geta seð hvernig algrímið virkar á síðunni og séð niðurstöðurnar og kóðan.
+   Planið er að setja forritið upp á github pages með html/css/javascript. Planið er að það ætti að geta seð hvernig algrímið virkar á síðunni og séð niðurstöðurnar og kóðan.
 
