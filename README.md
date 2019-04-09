@@ -40,4 +40,4 @@ Hugmyndin er sú að skoða röðunar algrím, prófa nokkrar leiðir til að le
 
 ---
 * ### Nemandi.
-    Róber Ingi.
+    Róbert Ingi Hálfdanarson.
