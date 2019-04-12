@@ -39,5 +39,5 @@ Hugmyndin er sú að skoða röðunar algrím, prófa nokkrar leiðir til að le
 
 
 ---
-* Nemandi.
-    Róber Ingi.
+* ### Nemandi.
+    Róbert Ingi Hálfdanarson.
