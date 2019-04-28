@@ -1,39 +1,43 @@
 
-def heapify(arr, n, i):
-    largest = i 
-    l = 2 * i + 1
-    r = 2 * i + 2
-    if l < n and arr[i] < arr[l]: 
+
+function heapify(arr, n, i){
+    let largest = i 
+    let l = 2 * i + 1
+    let r = 2 * i + 2
+
+    if(l < n & arr[i] < arr[l]){ 
         largest = l 
-        
+    }
 
-    if r < n and arr[largest] < arr[r]: 
+    if(r < n & arr[largest] < arr[r]){ 
         largest = r 
+    }
 
-    if largest != i:
+    if(largest != i){
         temp = arr[i]
         arr[i] = arr[largest]
         arr[largest] = temp
         
         heapify(arr, n, largest)
+    }
+}
 
+function heapSort(arr){
 
-def heapSort(arr):
+    n = arr.length;
 
-    n = len(arr)
-
-    for i in range(n, -1, -1):
+    for(i = n; i > -1; i--){
         heapify(arr, n, i)
+    }
 
-    print("-----")
     
-    for i in range(n-1, 0, -1):
-        print(i)
+    for(i = n-1; i > 0; i--){
         temp = arr[i]
         arr[i] = arr[0]
         arr[0] = temp
         heapify(arr, i, 0)
-
+    }
+}
 
 arr = [ 12, 11, 13, 5, 6, 7] 
 heapSort(arr) 

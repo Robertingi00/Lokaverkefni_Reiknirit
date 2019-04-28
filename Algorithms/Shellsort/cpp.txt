@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+void shellSort(int arr[], int n)
+{
+    int gap = n/2;
+    
+    while(gap > 0){
+        for(int ii = gap; ii < n; ii++){
+            int temp = arr[ii];
+            int j = ii;
+            while(j >= gap and arr[j -gap] > temp){
+                arr[j] = arr[j-gap];
+                j -= gap;
+            }
+            arr[j] =  temp;
+        }
+        gap = gap/2;
+    }
+}
+
+
+int main()
+{
+    int arr[5] = { 12, 34, 54, 2, 3};
+
+    shellSort(arr, 5);
+    
+    for(int i = 0; i < 5; i++){
+        cout << arr[i] << " ";
+    }
+    
+    return 0;
+}
