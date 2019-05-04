@@ -5,7 +5,7 @@ let laMenu = document.querySelectorAll(".la");
 
 var editor = document.querySelector(".editor");
 
-editor.innerHTML = data[3].pythonCode;
+editor.innerHTML = data[0].pythonCode;
 
 
 let desText = document.querySelectorAll("h2,.destext");
@@ -31,9 +31,9 @@ function laMenuClick(){
 	this.classList.add("active");
 	console.log(this);
 	languageCurrent = this;
+	
 	if(languageCurrent.dataset.index == 0){
 			editor.innerHTML = data[3].pythonCode;
-
 	}else if(languageCurrent.dataset.index == 1){
 		editor.innerHTML = data[3].javascriptCode;
 	}else if(languageCurrent.dataset.index == 2){
@@ -41,17 +41,22 @@ function laMenuClick(){
 	}else if(languageCurrent.dataset.index == 3){
 		editor.innerHTML = data[3].cCode;
 	}
+	
 }
 
 function changesData(index) {
 	desText[0].innerText = data[index].algorithm;
 	desText[1].innerText = data[index].description;
 	desText[2].innerText = data[index].codeDescription;
-	switch(languageCurrent.dataset.index){
-		case 0: editor.innerHTML = data[3].pythonCode;break;
-		case 1: editor.innerHTML = data[3].javascriptCode;break;
-		case 2: editor.innerHTML = data[3].cppCode;break;
-		case 3: editor.innerHTML = data[3].cCode;break;
+
+	if(languageCurrent.dataset.index == 0){
+			editor.innerHTML = data[index].pythonCode;
+	}else if(languageCurrent.dataset.index == 1){
+		editor.innerHTML = data[index].javascriptCode;
+	}else if(languageCurrent.dataset.index == 2){
+		editor.innerHTML = data[index].cppCode;
+	}else if(languageCurrent.dataset.index == 3){
+		editor.innerHTML = data[index].cCode;
 	}
 
 
