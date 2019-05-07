@@ -1,7 +1,7 @@
 let c = document.getElementById("c");
 let ctx = c.getContext("2d");
 
-let width = 800;
+let width = 900;
 c.width = width;
 let height = 600
 c.height = height;
@@ -16,7 +16,7 @@ for (let i = 0; i < 200; i++) {
 	list.push(Math.floor(Math.random() * 100) + 1);
 }
 
-list = mergeSort(list);
+list = quickSort(list);
 
 async function draw_list(list, key) {
 	ctx.fillStyle = "black";
