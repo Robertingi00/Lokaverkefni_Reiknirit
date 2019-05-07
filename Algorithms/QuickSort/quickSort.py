@@ -11,7 +11,10 @@ def partition(arr, low, high):
     return i + 1
 
 
-def quickSort(arr, low, high):
+def quickSort(arr, low=0, high=None):
+    if high is None:
+        high = len(arr) - 1
+        
     if low < high:
 
         pi = partition(arr, low, high)
