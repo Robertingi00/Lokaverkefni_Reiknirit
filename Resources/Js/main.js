@@ -12,7 +12,7 @@ let laMenu = document.querySelectorAll(".la");
 
 var editor = document.querySelector(".editor");
 
-editor.innerHTML = data[0].pythonCode;
+//editor.innerHTML = data[0].pythonCode;
 
 
 let desText = document.querySelectorAll("h2,.destext");
@@ -37,7 +37,7 @@ function menuClick(){
 	tableTr[this.dataset.index].classList.toggle("bold");
 	currentTableTr = tableTr[this.dataset.index ];
 
-	editNumbers(data[menuCurrent.dataset.index].codeLine[languageCurrent.dataset.index]);
+	editNumbers(data[menuCurrent.dataset.index-1].codeLine[languageCurrent.dataset.index]);
 
 } 
 
@@ -45,9 +45,9 @@ function laMenuClick(){
 	languageCurrent.classList.toggle("active");
 	this.classList.add("active");
 	console.log(this);
-	languageCurrent = this;
+	languageCurrent = this
 	changesData(menuCurrent.dataset.index)
-	editNumbers(data[menuCurrent.dataset.index].codeLine[languageCurrent.dataset.index]);
+	editNumbers(data[menuCurrent.dataset.index -1].codeLine[languageCurrent.dataset.index]);
 }
 
 function changesData(index) {
@@ -65,7 +65,7 @@ function changesData(index) {
 	}else if(languageCurrent.dataset.index == 3){
 		editor.innerHTML = data[index].cCode;
 	}
-	editNumbers(data[index].codeLine[languageCurrent.dataset.index]);
+	editNumbers(data[Number(index)].codeLine[languageCurrent.dataset.index]);
 }
 
 
