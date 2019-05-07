@@ -19,7 +19,7 @@ let end = false;
 let height = c.height;
 let width = c.width;
 
-let speed = 1;
+let speed = 50;
 
 let bar_width;
 let spacing = 1;
