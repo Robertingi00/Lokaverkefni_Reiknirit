@@ -1,11 +1,7 @@
-def bubbleSort(list):
-    swap = False
-    for a in range(len(list) -1):
-        if list[a] > list[a+1]:
-            swap = True
-            list[a], list[a+1] = list[a+1], list[a]
+def bubbleSort(arr):
+    n = len(arr)
 
-    if not swap:
-        return list
-
-    return bubbleSort(list)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
