@@ -9,7 +9,7 @@ let fStok = 50;
 /*
 let width = 900;
 c.width = width;
-let height = 600
+let height = 400
 c.height = height;
 */
 
