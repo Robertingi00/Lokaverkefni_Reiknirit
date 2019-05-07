@@ -1,22 +1,46 @@
 let c = document.getElementById("c");
 let ctx = c.getContext("2d");
 
+var menuCurrent;
+
+
+let fStok = 50;
+
+/*
 let width = 900;
 c.width = width;
 let height = 600
 c.height = height;
+*/
 
-let speed = 50;
+let stop = false;
+let end = false;
+
+let height = c.height;
+let width = c.width;
+
+let speed = 1;
 
 let bar_width;
 let spacing = 1;
 
-let list = [];
-for (let i = 0; i < 200; i++) {
-	list.push(Math.floor(Math.random() * 100) + 1);
+var list = [];
+
+function resetList(){
+	list =[];
+	for (let i = 0; i < fStok; i++) {
+		list.push(Math.floor(Math.random() * 100) + 1);
+	}
+
 }
 
-list = quickSort(list);
+resetList();
+
+function startCanvas(index){
+	algrim[index](list);
+}
+
+draw_list(list, 0);
 
 async function draw_list(list, key) {
 	ctx.fillStyle = "black";
@@ -34,7 +58,7 @@ async function draw_list(list, key) {
 			ctx.fillStyle = "green"
 		}
 
-		y = (height - (i * 2));
+		y = (height - (i));
 		length = height - y;
 		ctx.fillRect(x, y, bar_width, length);
 		x = x + bar_width + spacing;
@@ -67,7 +91,12 @@ async function partition(arr, low, high) {
 	temp = arr[i + 1];
 	arr[i + 1] = arr[high];
 	arr[high] = temp;
-	draw_list(arr, i);
+	
+	if(!(stop)){
+		console.log("hrllo")
+		draw_list(arr, i);
+
+	}
 	await sleep(speed);
 	return i + 1;
 }
@@ -130,27 +159,40 @@ async function selectionSort(arr) {
 	return arr;
 }
 
+function checkFlag() {
+    if(stop) {
+       window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+      algrim[menuCurrent.dataset.index-1](list);
+    }
+}
 async function bubbleSort(list) {
-	let swap = false;
-	for (let i = 0; i <= list.length -1; i++) {
-		if (list[i] > list[i+1]){
-			t = list[i];
-			list[i] = list[i+1];
-			list[i+1] = t;
-			draw_list(list, i);
-			await sleep(speed);
+	if(end){
+		return;
+	}else if(stop) {
+       window.setTimeout(checkFlag, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+      /* do something*/
+		let swap = false;
+		for (let i = 0; i <= list.length -1; i++) {
+			if (list[i] > list[i+1]){
+				t = list[i];
+				list[i] = list[i+1];
+				list[i+1] = t;
+				draw_list(list, i);
+				await sleep(speed);
 
-			swap = true;
+				swap = true;
 
+			}
 		}
-	}
 
-	if (!swap){
-		return list;
+		if (!swap){
+			return list;
+		}
+		
+		return bubbleSort(list);
 	}
-	
-	return bubbleSort(list);
-	
 }
 
 async function countingSort(arr){
@@ -301,3 +343,6 @@ async function shellSort(arr){
     gap = Math.floor(gap/2);
   }
 }
+
+
+var algrim = [bubbleSort, insertionSort, selectionSort, countingSort, shellSort, quickSort, heapSort, mergeSort];

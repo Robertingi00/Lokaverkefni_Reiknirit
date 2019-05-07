@@ -17,8 +17,15 @@ editor.innerHTML = data[0].pythonCode;
 
 let desText = document.querySelectorAll("h2,.destext");
 
-var menuCurrent = menu[0];
+menuCurrent = menu[0];
 var languageCurrent = laMenu[0];
+
+
+let canvas = document.querySelector(".canvas");
+let sliders = document.querySelectorAll(".slider");
+let startStop = document.querySelectorAll("button")
+let stok = document.getElementById('stok');
+let delay = document.getElementById("delay");
 
 
 function writeText(txt){
@@ -99,13 +106,53 @@ function editNumbers(number) {
 		let text = document.createTextNode(i);
 		p.appendChild(text);
 		editNumber.appendChild(p);
-
 	}
+}
 
+editNumbers();
+ 
+function setSpeed(){
+	delay.innerText = this.value;
+	speed = this.value;
+}
+
+function setStok(){
+	stok.innerText = this.value;
+	fStok = this.value;
 }
 
 
-editNumbers();
- menu.forEach(a => a.addEventListener('click', menuClick));
- laMenu.forEach(a => a.addEventListener('click', laMenuClick));
- exitButton.forEach(a => a.addEventListener('click', closeTable));
+canvasIndex = 0;
+function canvasStart(argument) {
+	if(canvasIndex == 0){
+		end = false;
+		startCanvas(menuCurrent.dataset.index-1);
+		canvasIndex++;
+	}else if(canvasIndex == 1){
+		stop = false;
+		console.log("ddasf")
+	}
+}
+
+function canvasStop(argument) {
+	stop = true;
+	console.log("stop")
+}
+
+function canvasReset(){
+	end = true;
+	stop = false;
+	canvasIndex = 0; 
+	resetList();
+	draw_list(list,0 );
+
+}
+
+menu.forEach(a => a.addEventListener('click', menuClick));
+laMenu.forEach(a => a.addEventListener('click', laMenuClick));
+exitButton.forEach(a => a.addEventListener('click', closeTable));
+sliders[0].addEventListener('change', setSpeed);
+sliders[1].addEventListener('change', setStok);
+startStop[0].addEventListener('click', canvasStart)
+startStop[1].addEventListener('click', canvasStop)
+startStop[2].addEventListener('click', canvasReset)
