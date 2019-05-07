@@ -3,7 +3,7 @@ let ctx = c.getContext("2d");
 
 let width = 900;
 c.width = width;
-let height = 600
+let height = 400
 c.height = height;
 
 let speed = 50;
