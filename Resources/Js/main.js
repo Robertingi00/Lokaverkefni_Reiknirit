@@ -12,7 +12,7 @@ let laMenu = document.querySelectorAll(".la");
 
 var editor = document.querySelector(".editor");
 
-//editor.innerHTML = data[0].pythonCode;
+editor.innerHTML = data[0].pythonCode;
 
 
 let desText = document.querySelectorAll("h2,.destext");
