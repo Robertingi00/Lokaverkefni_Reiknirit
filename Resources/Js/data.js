@@ -3,7 +3,32 @@ let data  = [{
     "description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "codeDescription":"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "codeLine":[9,15,22,22],
-    "cppCode":'',
+    "cppCode":'#include <bits/stdc++.h>
+
+using namespace std;
+
+void
+swap (int *xp, int *yp)
+{
+  int temp = *xp;
+  *xp = *yp;
+  *yp = temp;
+}
+
+
+void
+bubbleSort (int arr[], int n)
+{
+  int i, j;
+  for (i = 0; i < n - 1; i++){
+
+    for (j = 0; j < n - i - 1; j++){
+      if (arr[j] > arr[j + 1]){
+      	swap (&arr[j], &arr[j + 1]);
+      }
+    }
+  }
+}',
     "cCode":'',
     "pythonCode":'<p ><span class="orange">def</span> bubbleSort(list):</p><p class="tab">swap = <span class="orange">False</span></p><p class="tab"><span class="orange">for</span> a <span class="orange">in</span> <span class="blue">range</span>(<span class="blue">len</span>(<span class="blue">list</span>) -1):</p><p class="tabb"><span class="ornge">if</span> <span class="blue">list</span>[a] > <span class="blue">list</span>[a+1]:</p><p class="tabbb">swap = <span class="orange">True</span></p><p class="tabbb"><span class="blue">list</span>[a], <span class="blue">list</span>[a+1] = <span class="blue">list</span>[a+1], <span class="blue">list</span>[a]</p><p class="tab"><span class="orange">if not </span> swap:</p><p class="tabb"><span class="ornge">return</span> <span class="blue">list</span></p><p class="tab"><span class="blue">return</span> bubbleSort(<span class="blue">list</span>)</p>',
     "javascriptCode":'<p><span class="blue">function</span> <span class="orange">bubbleSort</span>(<span class="red">list</span>) {</p><p class="tab">  <span class="blue">let</span> swap = <span class="blue">false</span>;</p><p class="tab">    <span class="red">for</span> (<span class="blue">let</span> i = 0; i <= list.length -1; i++) {</p><p class="tabb"><span class="blue">if</span> (list[i] > list[i+1]){</p><p class="tabbb">t = list[i];</p><p class="tabbb">list[i] = list[i+1];</p><p class="tabbb">list[i+1] = t;</p><p class="tabbb">swap = <span class="blue">true</span>;</p><p class="tabb">}</p><p class="tab">}</p><p class="tab"><span class="blue">if</span> (<span class="red">!</span>swap){</p><p class="tabb"><span class="red">return</span> list;</p><p class="tab">}</p><p class="tab"><span class="red">return</span> bubbleSort(list);</p><p>}</p>'
