@@ -33,6 +33,7 @@ function writeText(txt){
 }
 
 function menuClick(){
+	canvasReset();
 	menuCurrent.classList.toggle("active");
 	this.classList.add("active");
 	console.log(this);
@@ -45,6 +46,7 @@ function menuClick(){
 	currentTableTr = tableTr[this.dataset.index ];
 
 	editNumbers(data[menuCurrent.dataset.index-1].codeLine[languageCurrent.dataset.index]);
+
 
 } 
 
@@ -126,11 +128,11 @@ canvasIndex = 0;
 function canvasStart(argument) {
 	if(canvasIndex == 0){
 		end = false;
+		stop = false;
 		startCanvas(menuCurrent.dataset.index-1);
 		canvasIndex++;
 	}else if(canvasIndex == 1){
 		stop = false;
-		console.log("ddasf")
 	}
 }
 
@@ -140,8 +142,8 @@ function canvasStop(argument) {
 }
 
 function canvasReset(){
+	stop = true;
 	end = true;
-	stop = false;
 	canvasIndex = 0; 
 	resetList();
 	draw_list(list,0 );
@@ -151,8 +153,8 @@ function canvasReset(){
 menu.forEach(a => a.addEventListener('click', menuClick));
 laMenu.forEach(a => a.addEventListener('click', laMenuClick));
 exitButton.forEach(a => a.addEventListener('click', closeTable));
-sliders[0].addEventListener('change', setSpeed);
-sliders[1].addEventListener('change', setStok);
+sliders[0].addEventListener('input', setSpeed);
+sliders[1].addEventListener('input', setStok);
 startStop[0].addEventListener('click', canvasStart)
 startStop[1].addEventListener('click', canvasStop)
 startStop[2].addEventListener('click', canvasReset)
