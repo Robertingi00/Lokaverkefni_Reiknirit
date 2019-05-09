@@ -1,0 +1,2 @@
+Sorts	Bubble	Insert	Quick	Select	Count	Heap	Merge	Shell
+Python	7.8406	3.5641	0.0925	2.8597	0.0033	0.0561	0.0435	0.0354
