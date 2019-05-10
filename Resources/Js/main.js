@@ -20,6 +20,9 @@ let desText = document.querySelectorAll("h2,.destext");
 menuCurrent = menu[0];
 var languageCurrent = laMenu[0];
 
+editNumbers(data[0].codeLine[0]);
+changesData(1);
+
 
 let canvas = document.querySelector(".canvas");
 let sliders = document.querySelectorAll(".slider");
@@ -98,6 +101,7 @@ function closeTable(){
 }
 
 function editNumbers(number) {
+	console.log(number);
 	editNumber.innerHTML = "";
 	let div = document.createElement("div");
 	div.classList.add("first")
@@ -111,7 +115,6 @@ function editNumbers(number) {
 	}
 }
 
-editNumbers();
  
 function setSpeed(){
 	delay.innerText = this.value;
@@ -156,5 +159,4 @@ exitButton.forEach(a => a.addEventListener('click', closeTable));
 sliders[0].addEventListener('input', setSpeed);
 sliders[1].addEventListener('input', setStok);
 startStop[0].addEventListener('click', canvasStart)
-startStop[1].addEventListener('click', canvasStop)
-startStop[2].addEventListener('click', canvasReset)
+startStop[1].addEventListener('click', canvasReset)

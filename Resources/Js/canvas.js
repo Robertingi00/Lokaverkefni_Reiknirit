@@ -220,15 +220,19 @@ async function countingSort(arr){
     } else {
 		(sort = []).length = arr.length;
 		sort.fill(0);
+
 		(count = []).length = Math.max(...arr);
 		count.fill(0);
-
 		for(let i = 0; i < arr.length; i++){
 			count[(arr[i])-1] += 1;
+			draw_list(arr, i);
+			await sleep(speed);
 		}
 
 		for(let i = 0; i < count.length-1; i++){
-		 	count[i+1] += count[i];
+		  	count[i+1] += count[i];
+			draw_list(count, i);
+			await sleep(speed);
 		}
 
 		for(let i = 0; i < arr.length; i++){
