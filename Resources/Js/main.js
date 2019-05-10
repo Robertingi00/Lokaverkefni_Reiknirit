@@ -101,7 +101,6 @@ function closeTable(){
 }
 
 function editNumbers(number) {
-	console.log(number);
 	editNumber.innerHTML = "";
 	let div = document.createElement("div");
 	div.classList.add("first")
